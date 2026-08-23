@@ -1,17 +1,17 @@
 class Solution {
 public:
-    void rotate(vector<vector<int>>& m) {
+    void rotate(vector<vector<int>>& matrix) {
+        int tr = matrix.size();
+        int tc = matrix[0].size();
 
-        //transpose 
-
-        for(int row = 0 ; row< m.size() ; row++){
-            for(int col = row +1 ; col < m[0].size();col++){
-                swap(m[row][col],m[col][row]);
+        for(int i = 0 ; i< tr ; i++){
+            for(int j = i+1 ; j< tc ; j++){
+                swap(matrix[i][j], matrix[j][i]);
             }
         }
 
-        for(int row = 0 ; row < m.size();row++){
-            reverse(m[row].begin(),m[row].end());
+        for(int i = 0 ; i< tr ; i++){
+            reverse(matrix[i].begin(), matrix[i].end());
         }
         
     }
